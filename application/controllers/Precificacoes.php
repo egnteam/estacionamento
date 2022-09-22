@@ -40,9 +40,9 @@ class Precificacoes extends CI_Controller
 			'precificacoes' => $this->core_model->get_all('precificacoes'),   // get all users
 		);
 
-		echo '<pre>';
-		print_r($data['precificacoes']);
-		exit();
+//		echo '<pre>';
+//		print_r($data['precificacoes']);
+//		exit();
 
 
 		$this->load->view('layout/header', $data);

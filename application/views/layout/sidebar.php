@@ -31,11 +31,15 @@
 				</div>
 
 				<div class="nav-lavel">Administração</div>
+
 				<div class="nav-item">
-					<a data-toggle="tooltip" data-placement="bottom" title="Gerenciar Usuarios" href="<?php echo base_url('usuarios') ?>"><i class="ik ik-users"></i><span>Gerenciae Usuários</span></a>
+					<a data-toggle="tooltip" data-placement="bottom" title="Gerenciar Usuarios" href="<?php echo base_url('usuarios') ?>"><i class="ik ik-users"></i><span>Gerenciar Usuários</span></a>
 				</div>
 				<div class="nav-item">
-					<a data-toggle="tooltip" data-placement="bottom" title="Gerenciar sistema" href="<?php echo base_url('sistema') ?>"><i class="ik ik-settings"></i><span>Gerenciar Usuários</span></a>
+					<a data-toggle="tooltip" data-placement="bottom" title="Gerenciar sistema" href="<?php echo base_url('sistema') ?>"><i class="ik ik-settings"></i><span>Gerenciar sistema</span></a>
+				</div>
+				<div class="nav-item">
+					<a data-toggle="tooltip" data-placement="bottom" title="Gerenciar Preficicaçoes" href="<?php echo base_url('preficicacoes') ?>"><i class="ik ik-dollar-sign"></i><span>Gerenciar Precificaçoes</span></a>
 				</div>
 
 

@@ -2,6 +2,8 @@
 
 defined('BASEPATH') OR exit('Acão nao permitida');
 
+/**  */
+
 class Core_model extends CI_Model
 {
 

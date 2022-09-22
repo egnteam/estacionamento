@@ -28,7 +28,7 @@ class Login extends CI_Controller
 
 			$usuario = $this->core_model->get_by_id('users',array('email'=> $identity));
 
-			$this->session->set_flashdata('sucesso','Seja muito bem vindo(a) '. $usuario->first_name);
+			$this->session->set_flashdata('sucesso','Seja Muito bem vinda(o) '. $usuario->first_name);
 			redirect('/');
 
 		}else{

@@ -8,7 +8,7 @@ class Core_model extends CI_Model
 	public function get_all($table = NULL, $condition = NULL)
 	{
 
-		if ($table && able_exists($table)) {
+		if ($table && $this->db->table_exists($table)) {
 
 			if (is_array($condition)) {
 				$this->db->where($condition);

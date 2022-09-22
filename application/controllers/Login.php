@@ -9,6 +9,8 @@ class Login extends CI_Controller
 	public function index()
 	{
 		$data = array(
+
+
 			'titulo' => 'Login',
 		);
 
@@ -20,7 +22,6 @@ class Login extends CI_Controller
 
 	public function auth()
 	{
-
 		$identity = html_escape($this->input->post('email'));
 		$password = html_escape($this->input->post('password'));
 		$remember = FALSE; // remember the user

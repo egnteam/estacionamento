@@ -4,6 +4,8 @@
 /** @var Usuarios $icone_view */
 /** @var Usuarios $sub_titulo */
 /** @var Usuarios $perfil_usuario */
+/**
+ * */
 ?>
 
 <?php $this->load->view('layout/navbar'); ?>
@@ -37,7 +39,7 @@
 								<li class="breadcrumb-item">
 									<a data-toggle="tooltip" data-placement="bottom"
 									   title="Listar <?php echo $this->router->fetch_class(); ?>"
-									   href="<?php echo base_url($this->router->fetch_class()); ?>">Listar
+									   href="<?php echo base_url($this->router->fetch_cla9ss()); ?>">Listar
 										&nbsp;<?php echo($this->router->fetch_class()); ?></a>
 								</li>
 								<li data-toggle="tooltip" data-placement="bottom" class="breadcrumb-item active"

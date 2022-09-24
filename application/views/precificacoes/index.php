@@ -2,8 +2,8 @@
 /** @var Precificacoes $titulo */
 /** @var Precificacoes $sub_titulo $ */
 /** @var Precificacoes $titulo_tabela */
-/** @var Precificacoes $precificacoes*/
-
+/** @var Precificacoes $precificacoes */
+/** @var Precificacoes $icone_view */
 ?>
 
 <?php $this->load->view('layout/navbar'); ?>
@@ -20,7 +20,7 @@
 				<div class="row align-items-end">
 					<div class="col-lg-8">
 						<div class="page-header-title">
-							<i class="ik ik-users bg-blue"></i>
+							<i class="<?php echo $icone_view; ?> bg-blue"></i>
 							<div class="d-inline">
 								<h5><?php echo $titulo ?></h5>
 								<span><?php echo $sub_titulo ?></span>
@@ -73,9 +73,9 @@
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-header d-block"><a data-toggle="tooltip" data-placement="bottom"
-													title="Cadastrar Usuario <?php $this->router->fetch_class(); ?>"
-													class="btn bg-blue float-right text-white"
-													href="<?php echo base_url($this->router->fetch_class() . '/core/'); ?>">Novo</a>
+															title="Cadastrar Usuario <?php $this->router->fetch_class(); ?>"
+															class="btn bg-blue float-right text-white"
+															href="<?php echo base_url($this->router->fetch_class() . '/core/'); ?>">Novo</a>
 						</div>
 						<div class="card-body">
 							<table class="table data-table">
@@ -119,13 +119,15 @@
 												</button>
 										</td>
 									</tr>
-									<div class="modal fade" id="categoria-<?php echo $categoria->precificacao_id ?>" tabindex="-1"
+									<div class="modal fade" id="categoria-<?php echo $categoria->precificacao_id ?>"
+										 tabindex="-1"
 										 role="dialog"
 										 aria-labelledby="exampleModalCenterLabel" aria-hidden="true">
 										<div class="modal-dialog modal-dialog-centered" role="document">
 											<div class="modal-content">
 												<div class="modal-header">
-													<h5 class="modal-title" id="exampleModalCenterLabel">Deseja excluir o registro ?</h5>
+													<h5 class="modal-title" id="exampleModalCenterLabel">Deseja excluir
+														o registro ?</h5>
 													<button type="button" class="close" data-dismiss="modal"
 															aria-label="Close"><span aria-hidden="true">&times;</span>
 													</button>
@@ -136,7 +138,8 @@
 													</p>
 												</div>
 												<div class="modal-footer">
-													<button data-toggle="tooltip" data-placement="bottom" title="Cancelar" type="button" class="btn btn-secondary"
+													<button data-toggle="tooltip" data-placement="bottom"
+															title="Cancelar" type="button" class="btn btn-secondary"
 															data-dismiss="modal">Não, Voltar
 													</button>
 

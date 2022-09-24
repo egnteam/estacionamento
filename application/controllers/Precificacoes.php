@@ -21,7 +21,8 @@ class Precificacoes extends CI_Controller
 		$data = array(
 			'titulo' => 'Preficicações cadastradas',
 			'sub_titulo' => 'Chegou a Hora de listar as precificaçoes cadastrados no banco de dados',
-			'icone_view' => 'fa-sharp fa-solid fa-dollar-sign',
+			'icone_view' => 'fa-solid fa-dollar-sign',
+			//'icone_view' => 'ik ik-settings',
 
 			'styles' => array(
 				'plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css',

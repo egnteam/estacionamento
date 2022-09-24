@@ -39,7 +39,7 @@
 					<a data-toggle="tooltip" data-placement="bottom" title="Gerenciar sistema" href="<?php echo base_url('sistema') ?>"><i class="ik ik-settings"></i><span>Gerenciar sistema</span></a>
 				</div>
 				<div class="nav-item">
-					<a data-toggle="tooltip" data-placement="bottom" title="Gerenciar Preficicaçoes" href="<?php echo base_url('preficicacoes') ?>"><i class="ik ik-dollar-sign"></i><span>Gerenciar Precificaçoes</span></a>
+					<a data-toggle="tooltip" data-placement="bottom" title="Gerenciar Preficicaçoes" href="<?php echo base_url('precificacoes') ?>"><i class="ik ik-dollar-sign"></i><span>Gerenciar Precificaçoes</span></a>
 				</div>
 
 

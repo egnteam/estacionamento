@@ -18,6 +18,11 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
 
+	<!-- our project just needs Font Awesome Solid + Brands -->
+	<link href="<?php echo base_url('public/css/fontawesome.css') ?>" rel="stylesheet">
+	<link href="<?php echo base_url('public//css/brands.css') ?>" rel="stylesheet">
+	<link href="<?php echo base_url('public//css/solid.css') ?>" rel="stylesheet">
+
 	<link rel="stylesheet" href="<?php echo base_url('public/plugins/bootstrap/dist/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('public/plugins/fontawesome-free/css/all.min.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('public/plugins/icon-kit/dist/css/iconkit.min.css') ?>">
@@ -55,5 +60,9 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
 	your browser</a> to improve your experience.</p>
 <![endif]-->
+
+
+
+
 
 <div class="wrapper">

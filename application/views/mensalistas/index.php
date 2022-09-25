@@ -101,10 +101,15 @@
 										<td> <?php echo $mensalista->mensalista_cpf; ?> </td>
 										<td> <?php echo $mensalista->mensalista_email; ?> </td>
 										<td> <?php echo $mensalista->mensalista_telefone_movel; ?> </td>
-										<td> <?php echo($mensalista->mensalista_ativo == 1 ? '<span 
+										<td> <?php echo($mensalista->mensalista_ativo == 1 ? '
+											<span 
 												class="badge badge-pill badge-success mb-1"><i 
-												class="fa-solid fa-lock-open"></i>Sim</span>' : '<span 
-												class="badge badge-pill badge-warning mb-1">Não</span>'); ?>
+												class="fa-solid fa-lock-open"></i>&nbsp;Sim
+												</span>' : '
+											<span 
+												class="badge badge-pill badge-warning mb-1"><i 
+												class="fa-solid fa-lock"></i>&nbsp;Não
+												</span>'); ?>
 										</td>
 
 										<td class="text-right">

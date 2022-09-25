@@ -11,7 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Precificacoes extends CI_Controller
 {
 	/**
-	 *
+	 *9
 	 * @use Core_model
 	 *
 	 * @param

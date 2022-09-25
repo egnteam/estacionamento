@@ -2,6 +2,11 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
+/**
+ * @property Core_model $core_model
+ * @property ion_auth $ion_auth
+ *
+ */
 
 class Usuarios extends CI_Controller
 {
@@ -16,7 +21,10 @@ class Usuarios extends CI_Controller
 	}
 
 
-	public function index()
+	/**
+	 * @return void
+	 */
+	public function index(): void
 	{
 
 		$data = array(
@@ -51,7 +59,11 @@ class Usuarios extends CI_Controller
 		$this->load->view('layout/footer');
 	}
 
-	public function core($usuario_id = Null)
+	/**
+	 * @param $usuario_id
+	 * @return void
+	 */
+	public function core($usuario_id = Null): void
 	{
 
 		if (!$usuario_id) {
@@ -217,7 +229,11 @@ class Usuarios extends CI_Controller
 		}
 	}
 
-	public function username_check($username)
+	/**
+	 * @param $username
+	 * @return bool
+	 */
+	public function username_check($username): bool
 	{
 		$usuario_id = $this->input->post('usuario_id');
 
@@ -231,7 +247,7 @@ class Usuarios extends CI_Controller
 
 	}
 
-	public function email_check($email)
+	public function email_check($email): bool
 	{
 		$usuario_id = $this->input->post('usuario_id');
 
@@ -245,7 +261,11 @@ class Usuarios extends CI_Controller
 
 	}
 
-	public function del($usuario_id = NULL)
+	/**
+	 * @param $usuario_id
+	 * @return void
+	 */
+	public function del($usuario_id = NULL): void
 	{
 		if (!$usuario_id || !$this->core_model->get_by_id('users', array('id' => $usuario_id))) {
 

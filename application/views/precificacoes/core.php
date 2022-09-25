@@ -3,6 +3,7 @@
 /** @var Precificacoes $precificacao */
 /** @var Precificacoes $icone_view */
 /** @var Precificacoes $sub_titulo */
+/** @var Precificacoes $icone_view */
 /**
  * */
 ?>

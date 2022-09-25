@@ -2,15 +2,15 @@
 
 defined('BASEPATH') OR exit('Acão nao permitida');
 
-/**
- *
- * @property get_all
- *
- */
 
 class Core_model extends CI_Model
 {
 
+	/**
+	 * @param $table
+	 * @param $condition
+	 * @return array|array[]|false|object|object[]
+	 */
 	public function get_all($table = NULL, $condition = NULL)
 	{
 
@@ -28,6 +28,11 @@ class Core_model extends CI_Model
 
 	}
 
+	/**
+	 * @param $table
+	 * @param $condition
+	 * @return array|false|mixed|object|null
+	 */
 	public function get_by_id($table = NULL, $condition = NULL)
 	{
 
@@ -44,6 +49,11 @@ class Core_model extends CI_Model
 
 	}
 
+	/**
+	 * @param $table
+	 * @param $data
+	 * @return false|void
+	 */
 	public function insert($table = NULL, $data = NULL)
 	{
 
@@ -69,6 +79,12 @@ class Core_model extends CI_Model
 
 	}
 
+	/**
+	 * @param $table
+	 * @param $data
+	 * @param $condition
+	 * @return false|void
+	 */
 	public function update($table = NULL, $data = NULL, $condition = NULL)
 	{
 		if ($table && $this->db->table_exists($table) && is_array($data) && is_array($condition)) {
@@ -87,7 +103,12 @@ class Core_model extends CI_Model
 
 	}
 
-	public function delete($table = NULL, $data = NULL, $condition = NULL)
+	/**
+	 * @param $table
+	 * @param $condition
+	 * @return false|void
+	 */
+	public function delete($table = NULL, $condition = NULL)
 	{
 
 		if ($table && $this->db->table_exists($table) && is_array($condition)) {

@@ -3,16 +3,19 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
+
 /**
- * @property $core_model
- * @use Core_model
- *
- * @>Core_model
+ * @property Core_model $core_model
+ * @property ion_auth $ion_auth
  */
 class Precificacoes extends CI_Controller
 {
 	/**
 	 *
+	 * @use Core_model
+	 *
+	 * @param
+	 * @return
 	 */
 	public function __construct()
 	{
@@ -25,7 +28,10 @@ class Precificacoes extends CI_Controller
 	}
 
 
-	public function index()
+	/**
+	 * @return void
+	 */
+	public function index(): void
 	{
 
 		$data = array(
@@ -62,7 +68,11 @@ class Precificacoes extends CI_Controller
 	}
 
 
-	public function core($precificacao_id = NULL)
+	/**
+	 * @param $precificacao_id
+	 * @return void
+	 */
+	public function core($precificacao_id = NULL): void
 	{
 
 		if (!$precificacao_id) {
@@ -80,8 +90,8 @@ class Precificacoes extends CI_Controller
 
 			} else {
 
-
-			//	$this->form_validation->set_rules('precificacao_categoria', 'Categoria', 'trim|required|min_length[3]|max_length[30]|callback_check_categoria');
+				//$this->form_validation->set_rules('precificacao_categoria', 'Categoria', 'trim|required|min_length[3]|max_length[30]|callback_check_categoria');
+				$this->form_validation->set_rules('precificacao_categoria', 'Categoria', 'trim|required|min_length[3]|max_length[30]');
 				$this->form_validation->set_rules('precificacao_valor_hora', 'Valor Hora', 'trim|required');
 				$this->form_validation->set_rules('precificacao_valor_mensalidade', 'Valor Mensalidade', 'trim|required');
 				$this->form_validation->set_rules('precificacao_numero_vagas', 'Numero Vagas', 'trim|required|max_length[50]|integer|greater_than[0]');
@@ -152,7 +162,6 @@ class Precificacoes extends CI_Controller
 					$this->load->view('layout/footer');
 
 				}
-				//possivel editar
 
 
 			}
@@ -166,8 +175,10 @@ class Precificacoes extends CI_Controller
 	 * @param $precificacao_categoria
 	 * @return bool
 	 */
-	public function check_categoria($precificacao_categoria)
-	{
+	public function check_categoria($precificacao_categoria): bool{
+
+
+
 		$precificacao_id = $this->input->post('precificacao_id');
 
 		if ($this->core_model->get_by_id('precificacoes', array('precificacao_categoria' => $precificacao_categoria, 'precificacao_id !=' => $precificacao_id))) {
@@ -181,6 +192,36 @@ class Precificacoes extends CI_Controller
 
 			return TRUE;
 		}
+
+
+	}
+
+	/**
+	 * @param $precificacao_id
+	 * @return void
+	 */
+	public function del($precificacao_id = NULL): void
+	{
+		if (!$this->core_model->get_by_id('precificacoes', array('precificacao_id' => $precificacao_id))) {
+
+			$this->session->set_flashdata('error', 'precificação nao encontrada');
+			redirect($this->router->fetch_class());
+
+		}
+
+		if ($this->core_model->get_by_id('precificacoes', array('precificacao_id' => $precificacao_id, 'precificacao_ativa' => 1))) {
+
+			$this->session->set_flashdata('error', 'precificação Ativa nao pode ser excluida');
+			redirect($this->router->fetch_class());
+
+		}
+
+//		echo '<pre>';
+//		print_r($precificacao_id);
+//		exit();
+
+		$this->core_model->delete('precificacoes', array('precificacao_id' => $precificacao_id));
+		redirect($this->router->fetch_class());
 
 
 	}

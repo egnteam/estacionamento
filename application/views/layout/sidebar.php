@@ -41,6 +41,9 @@
 				<div class="nav-item">
 					<a data-toggle="tooltip" data-placement="bottom" title="Gerenciar Preficicaçoes" href="<?php echo base_url('precificacoes') ?>"><i class="ik ik-dollar-sign"></i><span>Gerenciar Precificaçoes</span></a>
 				</div>
+				<div class="nav-item">
+					<a data-toggle="tooltip" data-placement="bottom" title="Gerenciar Formas de Pagamento" href="<?php echo base_url('formas') ?>"><i class="fa-regular fa-money-bill"></i><span>Formas de Pagamento</span></a>
+				</div>
 
 
 			</nav>

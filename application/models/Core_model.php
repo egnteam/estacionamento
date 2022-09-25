@@ -62,7 +62,7 @@ class Core_model extends CI_Model
 			$this->db->insert($table, $data);
 			$this->db->limit(1);
 
-			if ($this->db->affected_row() > 0) {
+			if ($this->db->affected_rows() > 0) {
 
 				$this->session->set_flashdata('sucesso', 'dados salvos com sucesso!');
 			} else {

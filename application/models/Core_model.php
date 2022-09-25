@@ -2,7 +2,11 @@
 
 defined('BASEPATH') OR exit('Acão nao permitida');
 
-/**  */
+/**
+ *
+ * @property get_all
+ *
+ */
 
 class Core_model extends CI_Model
 {

@@ -84,8 +84,8 @@
 									<th>#</th>
 									<th>Categoria</th>
 									<th>Valor da hora</th>
-									<th>Valor da Mensalidade</th>
-									<th>Numero de Vagas</th>
+									<th class="text-center">Valor da Mensalidade</th>
+									<th class="text-center">Numero de Vagas</th>
 									<th>Ativa</th>
 									<th class="nosort text-right pr-25 ">Ações</th>
 								</tr>
@@ -97,10 +97,14 @@
 									<tr>'
 										<td> <?php echo $categoria->precificacao_id; ?> </td>
 										<td> <?php echo $categoria->precificacao_categoria; ?> </td>
-										<td> <?php echo $categoria->precificacao_valor_hora; ?> </td>
-										<td> <?php echo $categoria->precificacao_valor_mensalidade; ?> </td>
-										<td> <?php echo $categoria->precificacao_numero_vagas; ?> </td>
-										<td> <?php echo($categoria->precificacao_ativa == 1 ? '<span class="badge badge-pill badge-success mb-1"><i class="fa-solid fa-lock-open"></i>Sim</span>' : '<span class="badge badge-pill badge-warning mb-1">Não</span>'); ?> </td>
+										<td> <?php echo 'R$&nbsp;' . $categoria->precificacao_valor_hora; ?> </td>
+										<td class="text-center"> <?php echo $categoria->precificacao_valor_mensalidade; ?> </td>
+										<td class="text-center"> <?php echo $categoria->precificacao_numero_vagas; ?> </td>
+										<td> <?php echo($categoria->precificacao_ativa == 1 ? '<span class="badge badge-pill badge-success mb-1">
+											<i class="fa-solid fa-lock-open">&nbsp;</i>Sim
+											</span>' : '<span class="badge badge-pill badge-warning mb-1"><i
+ 											class="fa-solid fa-lock"></i>&nbsp; Não
+ 											</span>'); ?> </td>
 
 										<td class="text-right">
 											<a data-toggle="tooltip" data-placement="bottom"

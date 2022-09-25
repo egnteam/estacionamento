@@ -1,9 +1,8 @@
 <?php
-/** @var Usuarios $titulo */
-/** @var Usuarios $usuario */
-/** @var Usuarios $icone_view */
-/** @var Usuarios $sub_titulo */
-/** @var Usuarios $perfil_usuario */
+/** @var Precificacoes $titulo */
+/** @var Precificacoes $precificacao */
+/** @var Precificacoes $icone_view */
+/** @var Precificacoes $sub_titulo */
 /**
  * */
 ?>
@@ -39,7 +38,7 @@
 								<li class="breadcrumb-item">
 									<a data-toggle="tooltip" data-placement="bottom"
 									   title="Listar <?php echo $this->router->fetch_class(); ?>"
-									   href="<?php echo base_url($this->router->fetch_cla9ss()); ?>">Listar
+									   href="<?php echo base_url($this->router->fetch_class()); ?>">Listar
 										&nbsp;<?php echo($this->router->fetch_class()); ?></a>
 								</li>
 								<li data-toggle="tooltip" data-placement="bottom" class="breadcrumb-item active"
@@ -54,122 +53,74 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card">
-						<div class="card-header"><?php echo(isset($usuario) ? '<i class="ik ik-calendar ik-2x:"></i>&nbsp;data da última alteração: &nbsp;' . formata_data_banco_com_hora($usuario->data_ultima_alteracao) : ""); ?></div>
+						<div class="card-header"><?php echo(isset($precificacao) ? '
+								<i class="ik ik-calendar ik-2x:">
+								</i>&nbsp;data da última alteração: &nbsp;' . formata_data_banco_com_hora($precificacao->precificacao_data_alteracao) : ""); ?>
+						</div>
 						<div class="card-body">
 
 							<form class="forms-sample" name="form_core" method="post">
 
 								<div class="form-group row">
 
-									<div class="col-md-6 mb-20">
-										<label>Nome</label>
-										<input type="text" class="form-control"
-											   name="first_name"
-											   value="<?php echo(isset($usuario) ? $usuario->first_name : set_value('first_name')); ?>">
-										<?php echo form_error('first_name', '<div class="text-danger">', '</div>'); ?>
-									</div>
-									<div class="col-md-6 mb-20">
-										<label>Sobrenome</label>
-										<input type="text" class="form-control"
-											   name="last_name"
-											   value="<?php echo(isset($usuario) ? $usuario->last_name : set_value('last_name')); ?>">
-										<?php echo form_error('last_name', '<div class="text-danger">', '</div>'); ?>
+									<div class="col-md-4 mb-20">
+										<label>Categoria</label>
+										<input type="text" class="form-control" name="precificacao_categoria"
+											   value="<?php echo(isset($precificacao) ? $precificacao->precificacao_categoria : set_value('precificacao_categoria')); ?>">
+										<?php echo form_error('precificacao_categoria', '<div class="text-danger">', '</div>'); ?>
 									</div>
 
-								</div>
-
-								<div class="form-group row">
-
-									<div class="col-md-6 mb-20">
-										<label>Usuario</label>
-										<input type="text" class="form-control"
-											   name="username"
-											   value="<?php echo(isset($usuario) ? $usuario->username : set_value('username')); ?>">
-										<?php echo form_error('username', '<div class="text-danger">', '</div>'); ?>
-									</div>
-									<div class="col-md-6 mb-20">
-										<label>Email (login)</label>
-										<input type="email" class="form-control"
-											   name="email"
-											   value="<?php echo(isset($usuario) ? $usuario->email : set_value('email')); ?>">
-										<?php echo form_error('email', '<div class="text-danger">', '</div>'); ?>
+									<div class="col-md-2 mb-20">
+										<label>Valor Hora</label>
+										<input type="text" class="form-control money"  name=" precificacao_valor_hora" value="<?php echo(isset($precificacao) ? $precificacao->precificacao_valor_hora : set_value('precificacao_valor_hora')); ?>">
+										<?php echo form_error('precificacao_valor_hora', '<div class="text-danger">', '</div>'); ?>
 									</div>
 
-								</div>
-
-								<div class="form-group row">
-
-									<div class="col-md-6 mb-20">
-										<label>senha</label>
-										<input type="password" class="form-control"
-											   name="password">
-										<?php echo form_error('password', '<div class="text-danger">', '</div>'); ?>
-									</div>
-									<div class="col-md-6 mb-20">
-										<label>Confirmação</label>
-										<input type="password" class="form-control"
-											   name="confirmacao">
-										<?php echo form_error('confirmacao', '<div class="text-danger">', '</div>'); ?>
+									<div class="col-md-2 mb-20">
+										<label>Valor Mensalidade</label>
+										<input type="text" class="form-control money"  name="precificacao_valor_mensalidade" value="<?php echo(isset($precificacao) ? $precificacao->precificacao_valor_mensalidade : set_value('precificacao_valor_mensalidade')); ?>">
+										<?php echo form_error('precificacao_valor_mensalidade', '<div class="text-danger">', '</div>'); ?>
 									</div>
 
-								</div>
-
-								<div class="form-group row">
-
-									<div class="col-md-6 mb-20">
-										<label>Perfil de acesso</label>
-										<select class="form-control"
-												name="perfil">
-
-											<?php if (isset($usuario)) : ?>
-
-												<option value="2" <?php echo($perfil_usuario->id == 2 ? 'selected' : ''); ?>>
-													Atendente
-												</option>
-												<option value="1"<?php echo($perfil_usuario->id == 1 ? 'selected' : ''); ?>>
-													Administrador
-												</option>
-
-											<?php else: ?>
-												<option value="2">Atendente</option>
-												<option value="1">Administrador</option>
-
-											<?php endif; ?>
-
-										</select>
-
+									<div class="col-md-2 mb-20">
+										<label>Numero Vagas</label>
+										<input type="number" class="form-control" name="precificacao_numero_vagas" value="<?php echo(isset($precificacao) ? $precificacao->precificacao_numero_vagas : set_value('precificacao_numero_vagas')); ?>">
+										<?php echo form_error('precificacao_numero_vagas', '<div class="text-danger">', '</div>'); ?>
 									</div>
 
-									<div class="col-md-6 mb-20">
-										<label>Ativo</label>
-										<select class="form-control"
-												name="active">
-											<?php if (isset($usuario)): ?>
-												<option value="0" <?php echo($usuario->active == 0 ? 'selected' : '') ?>>
+									<div class="col-md-2 mb-20">
+										<label>Ativa</label>
+										<select class="form-control" name="precificacao_ativa">
+											<?php if (isset($precificacao)): ?>
+
+												<option value="0" <?php echo($precificacao->precificacao_ativa == 0 ? 'selected' : '') ?> >
 													Não
 												</option>
-												<option value="1" <?php echo($usuario->active == 1 ? 'selected' : '') ?> >
-													sim
+												<option value="1" <?php echo($precificacao->precificacao_ativa == 1 ? 'selected' : '') ?> >
+													Sim
 												</option>
 
 											<?php else: ?>
+
 												<option value="0">Não</option>
 												<option value="1">Sim</option>
-											<?php endif; ?>
-										</select>
 
+											<?php endif; ?>
+
+										</select>
 									</div>
 
 								</div>
 
-								<?php if (isset($usuario)) : ?>
+
+								<?php if (isset($precificacao)) : ?>
 									<div class="form-group row">
 
 										<div class="col-md-12 mb-20">
 
 											<input type="hidden" class="form-control"
-												   name="usuario_id"
-												   value="<?php echo $usuario->id; ?>"
+												   name="preficacao_id"
+												   value="<?php echo $precificacao->precificacao_id; ?>"
 											>
 										</div>
 
@@ -177,7 +128,7 @@
 								<?php endif; ?>
 
 								<button type="submit" class="btn btn-primary mr-2">Salvar</button>
-								<a class="btn btn-info" href="<?php echo base_url($this->router->fetch_class());  ?>" >Voltar</a>
+								<a class="btn btn-info" href="<?php echo base_url($this->router->fetch_class()); ?>">Voltar</a>
 							</form>
 
 						</div>

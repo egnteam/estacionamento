@@ -2,6 +2,12 @@
 
 defined('BASEPATH' or exit('ação nao permitida'));
 
+/**
+ * @property Core_model $core_model
+ * @property ion_auth $ion_auth
+ *
+ */
+
 class Sistema extends CI_Controller
 {
 
@@ -15,26 +21,11 @@ class Sistema extends CI_Controller
 
 	}
 
-	public function index()
+	/**
+	 * @return void
+	 */
+	public function index(): void
 	{
-		/**
-		 *   [sistema_razao_social] => Park Now System
-		[sistema_nome_fantasia] => Park Now
-		[sistema_cnpj] => 80.838.809/0001-26
-		[sistema_ie] => 683.90228-49
-		[sistema_telefone_fixo] => (41) 3232-3030
-		[sistema_telefone_movel] => (41) 9999-9999
-		[sistema_cep] => 80510-000
-		[sistema_endereco] => Rua da Programação
-		[sistema_numero] => 54
-		[sistema_cidade] => Curitiba
-		[sistema_estado] => PR
-		[sistema_site_url] => http://parknow.com.br
-		[sistema_email] => parknow@contato.com.br
-		[sistema_texto_ticket] => Park Now - Seu veículo em boas mãos.
-		 *
-		 */
-		//este e um codigo de comiit
 
 		$this->form_validation->set_rules('sistema_razao_social', 'Razão Social', 'trim|required|min_length[5]|max_length[50]');
 		$this->form_validation->set_rules('sistema_nome_fantasia', 'Nome fantasia', 'trim|required|min_length[5]|max_length[20]');

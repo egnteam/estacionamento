@@ -3,7 +3,13 @@
 
 defined('BASEPATH') or exit('Ação não permitida');
 
-function formata_data_banco_com_hora($string) {
+
+/**
+ * @param $string
+ * @return string
+ */
+function formata_data_banco_com_hora($string): string
+{
 
 	$dia_sem = date('w', strtotime($string));
 
@@ -33,7 +39,12 @@ function formata_data_banco_com_hora($string) {
 	return $dia . '/' . $mes_num . '/' . $ano . ' ' . $hora;
 }
 
-function formata_data_banco_sem_hora($string) {
+/**
+ * @param $string
+ * @return string
+ */
+function formata_data_banco_sem_hora($string): string
+{
 
 	$dia_sem = date('w', strtotime($string));
 

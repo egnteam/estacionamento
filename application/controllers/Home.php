@@ -2,6 +2,12 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
+/**
+ * @property Core_model $core_model
+ * @property ion_auth $ion_auth
+ *
+ */
+
 class Home extends CI_controller
 {
 
@@ -16,7 +22,10 @@ class Home extends CI_controller
 
 	}
 
-	public function index()
+	/**
+	 * @return void
+	 */
+	public function index(): void
 	{
 		$data = array(
 			'titulo' => 'Home'

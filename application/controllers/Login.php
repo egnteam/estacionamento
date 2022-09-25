@@ -1,12 +1,19 @@
 <?php
 
 defined('BASEPATH' or exit('ação nao permitida'));
-
+/**
+ * @property Core_model $core_model
+ * @property ion_auth $ion_auth
+ *
+ */
 
 class Login extends CI_Controller
 {
 
-	public function index()
+	/**
+	 * @return void
+	 */
+	public function index(): void
 	{
 		$data = array(
 
@@ -20,7 +27,10 @@ class Login extends CI_Controller
 
 	}
 
-	public function auth()
+	/**
+	 * @return void
+	 */
+	public function auth(): void
 	{
 		$identity = html_escape($this->input->post('email'));
 		$password = html_escape($this->input->post('password'));
@@ -39,7 +49,10 @@ class Login extends CI_Controller
 
 	}
 
-	public function logout()
+	/**
+	 * @return void
+	 */
+	public function logout(): void
 	{
 
 		$this->ion_auth->logout();
